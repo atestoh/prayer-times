@@ -1,7 +1,26 @@
+/* Import Google Fonts for a more elegant look */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    /* Define a minimalist Islamic color palette */
+    --bg-color: #F8F8F8; /* Very light off-white/subtle grey for main background */
+    --card-bg: #FFFFFF; /* Pure white for the container card */
+    --primary-blue: #3F51B5; /* A deep, calming blue, often associated with Islamic art */
+    --secondary-green: #4CAF50; /* A vibrant yet soft green, symbolic in Islam */
+    --text-dark: #333333; /* Dark grey for general text */
+    --text-medium: #666666; /* Medium grey for less emphasis */
+    --border-light: #EEEEEE; /* Light border color */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+
+    /* Fonts */
+    --heading-font: 'Playfair Display', serif; /* Elegant serif for headings */
+    --body-font: 'Lato', sans-serif; /* Clean sans-serif for body text */
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e0f2f7; /* Light blue background */
-    color: #333;
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align to top */
@@ -9,44 +28,55 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+
+    /* Subtle geometric background pattern (very faint!) */
+    /* Generated from: https://heropatterns.com/ (Tessellation) */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C9C9C' fill-opacity='0.05'%3E%3Cpath d='M30 15c0 5.523 4.477 10 10 10s10-4.477 10-10-4.477-10-10-10-10 4.477-10 10zm0 30c0 5.523 4.477 10 10 10s10-4.477 10-10-4.477-10-10-10-10 4.477-10 10zM15 30c0 5.523 4.477 10 10 10s10-4.477 10-10-4.477-10-10-10-10 4.477-10 10zm30 0c0 5.523 4.477 10 10 10s10-4.477 10-10-4.477-10-10-10-10 4.477-10 10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px; /* Adjust size if pattern feels too large/small */
 }
 
 .container {
-    background-color: #fff;
+    background-color: var(--card-bg);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 8px 25px var(--shadow-color); /* More subtle, spread out shadow */
     text-align: center;
     width: 100%;
     max-width: 450px;
-    margin-top: 50px; /* Space from top */
+    margin-top: 50px;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensures any internal elements don't spill outside border-radius */
+    position: relative; /* For potential future absolute positioning of patterns etc. */
 }
 
 h1 {
-    color: #2196F3; /* Blue header */
+    font-family: var(--heading-font);
+    color: var(--primary-blue);
     margin-bottom: 20px;
-    font-size: 2.2em;
+    font-size: 2.5em; /* Slightly larger heading */
+    letter-spacing: 1px; /* A touch of spacing for elegance */
 }
 
 .location-display, .date-display {
     font-size: 1.1em;
     margin-bottom: 15px;
-    color: #555;
+    color: var(--text-medium); /* Use medium grey for less prominent text */
+    line-height: 1.5;
 }
 
 .prayer-times {
     margin-top: 30px;
-    border-top: 1px solid #eee;
     padding-top: 20px;
+    /* Removed top border for a cleaner look, letting prayer items define separation */
 }
 
 .prayer-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 1.2em;
+    padding: 15px 0; /* Slightly more padding for spacing */
+    border-bottom: 1px dashed var(--border-light); /* Dashed border for a softer divider */
+    font-size: 1.3em; /* Slightly larger text for prayer times */
 }
 
 .prayer-item:last-child {
@@ -54,47 +84,71 @@ h1 {
 }
 
 .prayer-name {
-    font-weight: bold;
-    color: #4CAF50; /* Green for prayer names */
+    font-weight: 600; /* Bolder for names */
+    color: var(--secondary-green);
+    text-transform: uppercase; /* Small caps for names */
+    letter-spacing: 0.5px;
 }
 
 .prayer-time {
-    color: #3f51b5; /* Darker blue for times */
-    font-weight: 600;
+    color: var(--primary-blue);
+    font-weight: 700; /* Extra bold for times */
 }
 
 #refresh-button {
-    background-color: #007bff; /* Primary blue */
+    background-color: var(--primary-blue);
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 14px 30px; /* Larger button */
+    border-radius: 25px; /* Pill-shaped button */
     font-size: 1.1em;
     cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s ease;
+    margin-top: 35px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for button */
 }
 
 #refresh-button:hover {
-    background-color: #0056b3;
+    background-color: #3040A8; /* Slightly darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 .last-updated {
     font-size: 0.9em;
-    color: #888;
+    color: var(--text-medium);
     margin-top: 20px;
+}
+
+.error-message {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb; /* Red border */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    text-align: left;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+    body {
+        padding: 15px; /* Less padding on smaller screens */
+    }
     .container {
-        margin-top: 20px;
-        padding: 20px;
+        margin-top: 30px;
+        padding: 25px;
+        border-radius: 12px;
     }
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
     .prayer-item {
-        font-size: 1.1em;
+        font-size: 1.2em;
+        padding: 12px 0;
+    }
+    #refresh-button {
+        padding: 12px 25px;
+        font-size: 1em;
     }
 }
