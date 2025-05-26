@@ -1,0 +1,100 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f2f7; /* Light blue background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px; /* Space from top */
+}
+
+h1 {
+    color: #2196F3; /* Blue header */
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+.location-display, .date-display {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.prayer-times {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.prayer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2em;
+}
+
+.prayer-item:last-child {
+    border-bottom: none;
+}
+
+.prayer-name {
+    font-weight: bold;
+    color: #4CAF50; /* Green for prayer names */
+}
+
+.prayer-time {
+    color: #3f51b5; /* Darker blue for times */
+    font-weight: 600;
+}
+
+#refresh-button {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+#refresh-button:hover {
+    background-color: #0056b3;
+}
+
+.last-updated {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .prayer-item {
+        font-size: 1.1em;
+    }
+}

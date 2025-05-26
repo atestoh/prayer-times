@@ -1,0 +1,56 @@
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Prayer Times</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png"> <!-- For iOS Home Screen Icon -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196F3"> <!-- Theme color for Android browser -->
+</head>
+<body>
+    <div class="container">
+        <h1>Prayer Times</h1>
+        <p class="location-display">Loading location...</p>
+        <p class="date-display"></p>
+
+        <div class="prayer-times">
+            <div class="prayer-item">
+                <span class="prayer-name">Fajr</span>
+                <span class="prayer-time" id="fajr-time">--:--</span>
+            </div>
+            <div class="prayer-item">
+                <span class="prayer-name">Sunrise</span>
+                <span class="prayer-time" id="sunrise-time">--:--</span>
+            </div>
+            <div class="prayer-item">
+                <span class="prayer-name">Dhuhr</span>
+                <span class="prayer-time" id="dhuhr-time">--:--</span>
+            </div>
+            <div class="prayer-item">
+                <span class="prayer-name">Asr</span>
+                <span class="prayer-time" id="asr-time">--:--</span>
+            </div>
+            <div class="prayer-item">
+                <span class="prayer-name">Maghrib</span>
+                <span class="prayer-time" id="maghrib-time">--:--</span>
+            </div>
+            <div class="prayer-item">
+                <span class="prayer-name">Isha</span>
+                <span class="prayer-time" id="isha-time">--:--</span>
+            </div>
+        </div>
+
+        <button id="refresh-button">Refresh Times</button>
+        <p class="last-updated"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
